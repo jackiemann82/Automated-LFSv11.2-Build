@@ -24,7 +24,7 @@ source .bashrc
 #Step 3
 echo "System build - Step 3 - Create Basic Filesystem"
 LFS="/mnt/lfs"
-mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}
+mkdir -pv $LFS/{etc,var,sources} $LFS/usr/{bin,lib,sbin}
 
 for i in bin lib sbin; do
 	ln -sv usr/$i $LFS/$i
@@ -35,7 +35,7 @@ case $(uname -m) in
 esac
 
 mkdir -pv $LFS/tools
-
+cp sources/ $LFS/sources
 # Step 4
 echo "LFS Build - Step 4 - Create lfs user"
 LFS="/mnt/lfs"
