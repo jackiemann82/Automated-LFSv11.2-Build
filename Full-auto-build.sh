@@ -1646,7 +1646,7 @@ rm -rf /tmp/*
 find /usr/lib /usr/libexec -name \*.la -delete
 find /usr -depth -name $(uname -m)-lfs-linux-gnu\* | xargs rm -rf
 
-echo "!!!Need to set root password before moving on!!!"
+echo root:password1! | chpasswd
 
 # Step 12
 # LFS 11.2 Build Script
