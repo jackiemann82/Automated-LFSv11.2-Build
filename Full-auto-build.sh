@@ -30,7 +30,7 @@ case $(uname -m) in
 esac
 
 mkdir -pv $LFS/tools
-cp -rvf sources/ $LFS/sources
+cp -rvf sources/ $LFS
 
 # Step 4
 echo "LFS Build - Step 4 - Create lfs user"
