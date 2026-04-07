@@ -12,3 +12,5 @@ echo "Creating new filesystem for "$device
 mkfs.ext4 $device"1"
 mkdir /mnt/lfs
 mount $device"1" /mnt/lfs
+export LFS=/mnt/lfs
+source ~/.bashrc
