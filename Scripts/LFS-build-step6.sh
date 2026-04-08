@@ -12,3 +12,7 @@ mount -vt tmpfs tmpfs $LFS/run
 if [ -h $LFS/dev/shm ]; then
 	mkdir -pv $LFS/$(readlink $LFS/dev/shm)
 fi
+rm -v $LFS/lib64/ld-linux-x86-64.so.2
+cp -v /lib/x86_64-linux-gnu/libtinfo.so.6 $LFS/lib/x86_64-linux-gnu/
+cp -v /lib/x86_64-linux-gnu/libc.so.6 $LFS/lib/x86_64-linux-gnu/
+cp -v /lib64/ld-linux-x86-64.so.2 $LFS/lib64/

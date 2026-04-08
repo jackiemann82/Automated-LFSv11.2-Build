@@ -1,10 +1,10 @@
 #!/bin/bash
 LFS=/mnt/lfs
-echo "LFS Build - Step 8 - Creating essential directories, files, and symlinks"
+echo "LFS Build - chroot build script - Creating essential directories, files, and symlinks"
 echo "WARNING!!! Use in chroot environment ONLY!!! ctrl+c to exit if not in chroot environment"
-sleep 5
+sleep 10
 mkdir -pv /{boot,home,mnt,opt,srv}
-mkdir -pv /etc/{opt,sysconfig}
+mkdir -pv /etc/{default,opt,sysconfig}
 mkdir -pv /lib/firmware
 mkdir -pv /media/{floppy,cdrom}
 mkdir -pv /usr/{,local/}{include,src}
