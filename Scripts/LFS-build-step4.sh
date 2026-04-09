@@ -16,9 +16,12 @@ set +h
 umask 022
 LFS=/mnt/lfs
 LC_ALL=POSIX
-LFS_TGT=$(uname -m)
-PATH=/usr/bin:/usr/sbin:$LFS/tools/bin
+LFS_TGT=$(uname -m)-lfs-linux-gnu
+PATH=/usr/bin
 if [ ! -L /bin ]; then PATH=/bin:$PATH; fi
+PATH=$PATH:/usr/sbin:$LFS/tools/bin
 CONFIG_SITE=$LFS/usr/share/config.site
 export LFS LC_ALL LFS_TGT PATH CONFIG_SITE
 EOF
+chown lfs:lfs /home/lfs/.bash_profile
+chown lfs:lfs /home/lfs/.bashrc

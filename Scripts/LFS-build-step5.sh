@@ -13,7 +13,7 @@ begin () {
 	package_name=$1
 	package_ext=$2
 	echo "[lfs-cross] Starting build of $package_name at $(date)"
-	tar -xvf $package_name.$package_ext
+	tar -xf $package_name.$package_ext
 	cd $package_name
 	pwd
 }
@@ -21,7 +21,8 @@ begin () {
 finish () {
 	echo "[lfs-cross] Finishing build of $package_name at $(date)"
 	cd $LFS_Sources
-	rm -rvf $package_name
+	rm -rf $package_name
+	sleep 10
 }
 
 begin binutils-2.39 tar.xz
@@ -69,8 +70,7 @@ cd       build
 make
 make install
 cd ..
-cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
-  dirname $LFS_TGT/install-tools/include/limits.h
+cat gcc/limitx.h gcc/glimits.h gcc/limity.h > `dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/install-tools/include/limits.h
 finish
 
 wget https://www.kernel.org/pub/linux/kernel/v5.x/linux-5.19.2.tar.xz

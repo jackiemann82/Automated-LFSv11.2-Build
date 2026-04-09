@@ -16,3 +16,7 @@ rm -v $LFS/lib64/ld-linux-x86-64.so.2
 cp -v /lib/x86_64-linux-gnu/libtinfo.so.6 $LFS/lib/x86_64-linux-gnu/
 cp -v /lib/x86_64-linux-gnu/libc.so.6 $LFS/lib/x86_64-linux-gnu/
 cp -v /lib64/ld-linux-x86-64.so.2 $LFS/lib64/
+
+mkdir -v $LFS/usr/lib/x86_64-linux-gnu
+cp -v /usr/lib/x86_64-linux-gnu/libm.so.6 $LFS/usr/lib/x86_64-linux-gnu/
+cp -v /usr/lib/x86_64-linux-gnu/libcrypto.so.3 $LFS/usr/lib/x86_64-linux-gnu/
