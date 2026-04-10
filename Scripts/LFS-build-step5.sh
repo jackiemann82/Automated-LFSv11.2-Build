@@ -4,25 +4,22 @@
 # by Luís Mendes :)
 # 06/Sep/2022
 echo "LFS Build - Step 5 - Cross-toolchain and Cross compiling"
-LFS="/mnt/lfs"
-LFS_Sources="/mnt/lfs/sources"
-LFS_TGT=$(uname -m)-lfs-linux-gnu
-cd $LFS_Sources
-pwd
+#LFS="/mnt/lfs"
+#LFS_Sources="/mnt/lfs/sources"
+#LFS_TGT=$(uname -m)-lfs-linux-gnu
+cd $LFS/sources
 begin () {
 	package_name=$1
 	package_ext=$2
 	echo "[lfs-cross] Starting build of $package_name at $(date)"
 	tar -xf $package_name.$package_ext
 	cd $package_name
-	pwd
 }
 
 finish () {
 	echo "[lfs-cross] Finishing build of $package_name at $(date)"
-	cd $LFS_Sources
+	cd $LFS/sources
 	rm -rf $package_name
-	sleep 10
 }
 
 begin binutils-2.39 tar.xz
@@ -296,11 +293,11 @@ rm -v $LFS/usr/lib/lib{bfd,ctf,ctf-nobfd,opcodes}.{a,la}
 finish
 
 begin gcc-12.2.0 tar.xz
-tar -xvf $LFS_Sources/mpfr-4.1.0.tar.xz
+tar -xvf $LFS/sources/mpfr-4.1.0.tar.xz
 mv -v mpfr-4.1.0 mpfr
-tar -xvf $LFS_Sources/gmp-6.2.1.tar.xz
+tar -xvf $LFS/sources/gmp-6.2.1.tar.xz
 mv -v gmp-6.2.1 gmp
-tar -xvf $LFS_Sources/mpc-1.2.1.tar.gz
+tar -xvf $LFS/sources/mpc-1.2.1.tar.gz
 mv -v mpc-1.2.1 mpc
 case $(uname -m) in
   x86_64)

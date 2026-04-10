@@ -1,9 +1,8 @@
 #!/bin/bash
 echo "LFS Build - Step 4 - Create lfs user"
-LFS="/mnt/lfs"
+CDIR=`pwd`
 groupadd lfs
-useradd -s /bin/bash -g lfs -m -k /dev/null lfs
-useradd -m -p "$(openssl passwd -1 "password")" "lfs"
+useradd -s /bin/bash -g lfs -m -p password1 -k /dev/null lfs
 chown -R lfs:lfs $LFS/*
 chown lfs:lfs $LFS
 
@@ -23,5 +22,7 @@ PATH=$PATH:/usr/sbin:$LFS/tools/bin
 CONFIG_SITE=$LFS/usr/share/config.site
 export LFS LC_ALL LFS_TGT PATH CONFIG_SITE
 EOF
-chown lfs:lfs /home/lfs/.bash_profile
-chown lfs:lfs /home/lfs/.bashrc
+cp -v $CDIR/Scripts/LFS-build-step5.sh /home/lfs
+
+chown -R lfs:lfs /home/lfs/*
+chown lfs:lfs /home/lfs

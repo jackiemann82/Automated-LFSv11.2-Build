@@ -1,6 +1,5 @@
 #!/bin/bash
 echo "LFS build - Step 3 - Create Basic Filesystem"
-LFS="/mnt/lfs"
 CDIR=`pwd`
 cd $LFS
 mkdir -pv $LFS/{etc,var,sources,tools} $LFS/usr/{bin,lib,sbin} $LFS/lib/x86_64-linux-gnu
