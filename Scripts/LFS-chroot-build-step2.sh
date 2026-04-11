@@ -1352,7 +1352,7 @@ install uhci_hcd /sbin/modprobe ehci_hcd ; /sbin/modprobe -i uhci_hcd ; true
 EOF
 
 # 10.4. Using GRUB to Set Up the Boot Process
-grub-install /dev/sdb
+grub-install /dev/sdb --target=i386-pc
 cat > /boot/grub/grub.cfg << "EOF"
 # Begin /boot/grub/grub.cfg
 set default=0
