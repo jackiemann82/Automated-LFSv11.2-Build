@@ -4,9 +4,9 @@
 # by Luís Mendes :)
 # 06/Sep/2022
 echo "LFS Build - Step 5 - Cross-toolchain and Cross compiling"
-#LFS="/mnt/lfs"
-#LFS_Sources="/mnt/lfs/sources"
-#LFS_TGT=$(uname -m)-lfs-linux-gnu
+LFS="/mnt/lfs"
+LFS_Sources="/mnt/lfs/sources"
+LFS_TGT=$(uname -m)-lfs-linux-gnu
 cd $LFS/sources
 begin () {
 	package_name=$1

@@ -1,4 +1,5 @@
 #!/bin/bash
+LFS="/mnt/lfs"
 echo "LFS build - Step 3 - Create Basic Filesystem"
 CDIR=`pwd`
 

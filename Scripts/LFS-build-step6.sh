@@ -1,5 +1,5 @@
 #!/bin/bash
-LFS=/mnt/lfs
+LFS="/mnt/lfs"
 echo "LFS - Step 6 - Prep virtual kernel filesystems"
 chown -R root:root $LFS/*
 chown root:root $LFS

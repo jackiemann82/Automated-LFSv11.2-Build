@@ -1,5 +1,5 @@
 #!/bin/bash
-LFS=/mnt/lfs
+LFS="/mnt/lfs"
 echo "LFS Build - chroot build script - Creating essential directories, files, and symlinks"
 echo "WARNING!!! Use in chroot environment ONLY!!! ctrl+c to exit if not in chroot environment"
 sleep 10

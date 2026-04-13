@@ -1,5 +1,5 @@
 #!/bin/bash
-LFS=/mnt/lfs
+LFS="/mnt/lfs"
 echo "LFS Build - chroot - Building additional tools"
 # LFS 11.2 Build Script
 # Builds the additional temporary tools from chapter 7

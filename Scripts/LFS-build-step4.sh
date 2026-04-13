@@ -1,4 +1,5 @@
 #!/bin/bash
+LFS="/mnt/lfs"
 echo "LFS Build - Step 4 - Create lfs user"
 CDIR=`pwd`
 groupadd lfs
